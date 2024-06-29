@@ -1,0 +1,95 @@
+//Get all the countries from Asia continent /region using Filter function.
+
+const allcountries = [
+{ name: "Nigeria", continent: "Africa"},
+{ name: "china", continent: "Asia"},
+{ name: "India", continent: "Asia"},
+{ name: "Nepal", continent: "Asia"},
+{ name: "Angola", continent: "Africa"},
+{ name: "Greece", continent: "Europe"},
+{ name: "Kenya", continent: "Africa"},
+{ name:"Greece", continent: "Europe"}
+]
+
+let asianCountries = allcountries.filter(country => {
+return country.continent === "Asia";
+})
+
+console.log(asianCountries);
+
+//Get all the countries with a population of less than 2 lakhs using Filter function
+
+const population = [
+{ name: "Nigeria", continent: "Africa", population:100123},
+{ name: "china", continent: "Asia", population:270123},
+{ name: "India", continent: "Asia", population:240123},
+{ name: "Nepal", continent: "Asia", population:100123},
+{ name: "Angola", continent:"Africa", population:100123},
+{ name: "Greece", continent: "Europe", population:100123},
+{ name: "Kenya", continent: "Africa", population:100123},
+{ name:"London", continent: "Europe", population:55123}
+]
+
+let populessthan2l = population.filter(country =>
+country.population < 200000);
+
+console.log(populessthan2l);
+
+//Print the following details name, capital, flag using forEach function
+
+const countries = [
+{ name: "Nigeria", capital: "Abuja"},
+{ name: "china", capital: "Beijing"},
+{ name: "Indi", capital: "Delhi"},
+{ name: "Nepal", capital: "Kathmandu"},
+{ name: "Angola", capital: "Luanda"},
+{ name: "Greece", capital: "Athens"},
+{ name: "pakista", capital: "islamabad"},
+{ name: "UK", capital: "London"}
+]
+
+let countriesinfo = countries.forEach(country => {
+console.log(country);
+return country;
+});
+
+console.log(countriesinfo);
+
+//Print the total population of countries using reduce function.
+
+const totalcountries = [
+{ name: "Nigeria", continent: "Africa", population:100123},
+{ name: "china", continent: "Asia", population:270123},
+{ name: "India", continent: "Asia", population:240123},
+{ name: "Nepal", continent: "Asia", population:100123},
+{ name: "Angola", continent: "Africa", population:100123},
+{ name: "Greece", continent: "Europe", population:100123},
+{ name: "Kenya", continent: "Africa", population:100123},
+{ name: "London", continent: "Europe", population:55123}
+]
+
+let totalpopulation = totalcountries.reduce((acc, current) =>{
+return acc + current.population;
+} ,0);
+
+console.log(totalpopulation);
+
+//Print the country which uses US Dollars as currency.
+
+const economy = [
+{ name: "Nigeria",currency:"Naira"},
+{ name: "china", currency:"Yuan"},
+{ name: "India", currency:"Rupees"},
+{ name: "Nepal", currency:"Nepalese"},
+{ name: "Angola", currency:"Kwanza"},
+{ name: "Greece", currency:"GRD"},
+{ name: "Kenya", currency:"Kenyan"},
+{ name: "London", currency:"Pound"},
+{ name: "America(U.S)", currency:"Dollar"}
+]
+
+let dollars = (country) => {
+return economy.filter(x => x.indexOf(country) > -1);
+}
+
+console.log(dollars);
